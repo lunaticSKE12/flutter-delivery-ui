@@ -23,7 +23,7 @@ class Home extends StatelessWidget {
         child: ListView(
           children: [
             Container(
-              margin: EdgeInsets.symmetric(vertical: 18),
+              margin: EdgeInsets.symmetric(vertical: 24),
               child: Text(
                 'Find Delicious \nFood around you',
                 style: TextStyle(
@@ -31,7 +31,25 @@ class Home extends StatelessWidget {
                     fontSize: 32,
                     color: Colors.grey.shade800),
               ),
-            )
+            ),
+            Container(
+              padding: EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Colors.grey.shade300),
+                  borderRadius: BorderRadius.circular(12)),
+              child: Row(
+                children: [
+                  Icon(Icons.search),
+                  SizedBox(
+                    width: 6,
+                  ),
+                  Text(
+                    'Search Food',
+                    style: TextStyle(fontSize: 16, color: Colors.grey),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
