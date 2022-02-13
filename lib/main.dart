@@ -89,8 +89,8 @@ class Home extends StatelessWidget {
                   margin: EdgeInsets.only(bottom: 14),
                   child: Row(children: [
                     Container(
-                      height: 140,
-                      width: 140,
+                      height: 130,
+                      width: 130,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(18),
                         child: Image.network(
@@ -98,7 +98,54 @@ class Home extends StatelessWidget {
                           fit: BoxFit.cover,
                         ),
                       ),
-                    )
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Expanded(
+                        child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          foods[index]['title'],
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.w700),
+                        ),
+                        SizedBox(
+                          height: 3,
+                        ),
+                        Text(
+                          '฿${foods[index]['price']}',
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.bold),
+                        ),
+                        Divider(),
+                        Text(
+                          'In Stock',
+                          style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey),
+                        ),
+                        Spacer(),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Chip(
+                              label: Text(
+                                'Order Now',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(4),
+                              backgroundColor: Colors.red.shade400,
+                            )
+                          ],
+                        )
+                      ],
+                    ))
                   ]),
                 );
               },
